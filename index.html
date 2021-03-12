@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to UXQuotes, your daily dosage of UX motivation" />
+        <meta name="keywords" content="UX, User Experience, UX Motivation, UX Inspiration" />
+        <meta name="author" content="Karthik Venkataraman M" />
+        <title>UXQuotes | Daily dosage of UX motivation</title>
+        <link rel="icon" href="/assets/images/ux-quotes-logo.png" sizes="16x16 32x32" type="image/png" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css" />
+        <link rel="stylesheet" href="/assets/css/style.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <header class="header" role="banner">
+                <div class="header__inner container">
+                    <img src="/assets/images/ux-quotes-logo.svg" height="64" width="64" />
+                </div>
+            </header>
+            <main class="main justify-content-center align-items-center" tabindex="-1">
+                <div id="quoteContainer" class="container d-flex flex-column justify-content-center align-items-center">
+                    <div id="quoteContainerInner" class="d-flex flex-column justify-content-center align-items-center">
+                        <blockquote class="quote"></blockquote>
+                        <cite class="author"></cite>
+                    </div>
+                    <div style="margin-top: 2rem" data-html2canvas-ignore="true">
+                        <button class="black-button button-lg" onclick="showRandomQuote()">Need more motivation!</button>
+                    </div>
+                    <div style="margin-top: 1.5rem; margin-bottom: 3rem;" data-html2canvas-ignore="true">
+                        <button class="button-icon" onclick="tweetQuote()" aria-label="Tweet this quote" title="Tweet this Quote">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    fill="currentColor"
+                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                ></path>
+                            </svg>
+                        </button>
+
+                        <button class="button-icon" onclick="copyQuote()" aria-label="Copy this quote to clipboard" title="Copy this Quote">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="clone" class="svg-inline--fa fa-clone fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    fill="currentColor"
+                                    d="M464 0c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48H176c-26.51 0-48-21.49-48-48V48c0-26.51 21.49-48 48-48h288M176 416c-44.112 0-80-35.888-80-80V128H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48v-48H176z"
+                                ></path>
+                            </svg>
+                        </button>
+
+                        <button class="button-icon" onclick="downloadQuote()" aria-label="Download this Quote" title="Download this Quote">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" class="svg-inline--fa fa-arrow-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    fill="currentColor"
+                                    d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="toastMessage" class="toast" data-html2canvas-ignore="true">Copied to clipboard!</div>
+            </main>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js" defer></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" defer></script>
+        <script src="/assets/scripts/main.js"></script>
+    </body>
+</html>
