@@ -1,58 +1,118 @@
 [
     {
         "quote": "People ignore design that ignores people.",
-        "author": "Frank Chimero, Designer"
+        "author": "Frank Chimero"
     },
     {
         "quote": "When UX doesn’t consider ALL users, shouldn’t it be known as “SOME User Experience” or… SUX",
-        "author": "Billy Gregory, Senior Accessibility Engineer"
+        "author": "Billy Gregory"
     },
     {
         "quote": "The next big thing is the one that makes the last big thing usable.",
-        "author": "Blake Ross, Co-creator of Mozilla Firefox"
+        "author": "Blake Ross"
     },
     {
         "quote": "Rule of thumb for UX: More options, more problems.",
-        "author": "Scott Belsky, Chief Product Officer"
+        "author": "Scott Belsky"
     },
     {
         "quote": "Design isn’t finished until somebody is using it.",
-        "author": "Brenda Laurel, PhD, Independent Scholar"
+        "author": "Brenda Laurel"
     },
     {
         "quote": "How do I explain what I do at a party? The short version is that I say I humanize technology.",
-        "author": "Fred Beecher, Director of UX, The Nerdery"
+        "author": "Fred Beecher"
     },
     {
         "quote": "UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.",
-        "author": "Dain Miller, Web Developer"
+        "author": "Dain Miller"
     },
     {
         "quote": "Design is everywhere. From the dress you’re wearing to the smartphone you’re holding, it’s design.",
-        "author": "Samadara Ginige, Designer and Developer"
+        "author": "Samadara Ginige"
     },
     {
         "quote": "If you think good design is expensive, you should look at the cost of bad design.",
-        "author": "Dr. Ralf Speth, Chief Executive Officer, Jaguar Land Rover"
+        "author": "Dr. Ralf Speth"
     },
     {
         "quote": "Design used to be the seasoning you’d sprinkle on for taste; now it’s the flour you need at the start of the recipe.",
-        "author": "John Maeda, Designer and Technologist"
+        "author": "John Maeda"
     },
     {
         "quote": "Accidents often produce the best solutions…Only you can recognize the difference between an accident and your original intent.",
-        "author": "Jennifer Morla, Creative Director"
+        "author": "Jennifer Morla"
     },
     {
         "quote": "If we want users to like our software, we should design it to behave like a likeable person: respectful, generous and helpful.",
-        "author": "Alan Cooper, Software Designer and Programmer"
+        "author": "Alan Cooper"
     },
     {
         "quote": "Every great design begins with an even better story.",
-        "author": "Lorinda Mamo, Designer / Creative Director"
+        "author": "Lorinda Mamo"
     },
     {
         "quote": "If I had an hour to solve a problem and my life depended on the solution, I would spend the first 55 minutes determining the proper question to ask, for once I know the proper question, I could solve the problem in less than five minutes.",
-        "author": "Albert Einstein, Theoretical Physicist"
+        "author": "Albert Einstein"
+    },
+    {
+        "quote": "A problem well stated is a problem half solved.",
+        "author": "Charles Kettering"
+    },
+    {
+        "quote": "A consistent experience is a better experience.",
+        "author": "Mark Eberman"
+    },
+    {
+        "quote": "Creativity is allowing yourself to make mistakes. Design is knowing which ones to keep.",
+        "author": "Scott Adams"
+    },
+    {
+        "quote": "There are three responses to a piece of design– yes, no, and WOW! Wow is the one to aim for.",
+        "author": "Milton Glaser"
+    },
+    {
+        "quote": "Want your users to fall in love with your designs? Fall in love with your users.",
+        "author": "Dana Chisnell"
+    },
+    {
+        "quote": "Good design is the most important way to differentiate ourselves from our competitors.",
+        "author": "Yun Jong Yong"
+    },
+    {
+        "quote": "Like all forms of design, visual design is about problem-solving, not about personal preference or unsupported opinion.",
+        "author": "Bob Baxley"
+    },
+    {
+        "quote": "Because every person knows what he likes, every person thinks he is an expert on user interfaces.",
+        "author": "Paul Heckel"
+    },
+    {
+        "quote": "Ease of use may be invisible, but its absence sure isn’t.",
+        "author": "IBM"
+    },
+    {
+        "quote": "If I have a thousand ideas and only one turns out to be good I am satisfied.",
+        "author": "Alfred Nobel"
+    },
+    {
+        "quote": "If you find an element of your interface requires instructions, then you need to redesign it.",
+        "author": "Dan Rubin"
+    },
+    {
+        "quote": "The ability to simplify means to eliminate the unnecessary so that the necessary may speak.",
+        "author": "Hans Hofmann"
+    },
+    {
+        "quote": "Genius is the ability to reduce the complicated to the simple.",
+        "author": "C.W. Ceram"
+    },
+    {
+        "quote": "Don’t stare at a blank page for too long, be bold, and make the first incisive stroke. The rest will come naturally.",
+        "author": "James Kingman"
+    },
+    {
+        "quote": "Some people think design means how it looks. But of course, if you dig deeper, it’s really how it works.",
+        "author": "Steve Jobs"
     }
 ]
