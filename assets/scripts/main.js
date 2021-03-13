@@ -6,7 +6,6 @@ const HTML2CANVAS_CONFIG = {
   scale: 2,
   width: screen.width,
   height: screen.height,
-  // onclone: function(document) {$('#siteLink').css({"display":"block","position": "absolute", "bottom": "20px","right": "20px"});}
 };
 const TOAST_MESSAGE = document.getElementById("toastMessage");
 const TOAST_TIMEOUT = 3000;
@@ -32,10 +31,9 @@ const showRandomQuote = () => {
   // Use the key to get the corresponding quote from the "quotesData" object
   let randomQuote = quotesData[randomKey];
 
+  // Display the random quote and author
   QUOTE_DOM_ELEMENTS.quote.text(randomQuote.quote);
   QUOTE_DOM_ELEMENTS.author.text(`- ${randomQuote.author}`);
-
-  confetti.start(1200, 50, 150);
 };
 
 const tweetQuote = () => {
@@ -51,20 +49,10 @@ const copyQuote = () => {
   window.getSelection().addRange(range);
   document.execCommand("copy"); //NO I18N
   window.getSelection().removeAllRanges();
+
+  // Show toast message once copied
   TOAST_MESSAGE.classList.add('toast--show');
-  setTimeout(function(){ TOAST_MESSAGE.classList.remove('toast--show'); }, TOAST_TIMEOUT);
-};
-
-const downloadQuote = () => {
-  let currentTime = new Date();
-
-  $("#confetti-canvas").attr("data-html2canvas-ignore", "true");
-  confetti.pause();
-
-  html2canvas(document.body, HTML2CANVAS_CONFIG).then(function (canvas) {
-    saveAs(canvas.toDataURL(), `UXquotes-${currentTime.toLocaleString()}.png`);
-    confetti.resume();
-  });
+  setTimeout(function () { TOAST_MESSAGE.classList.remove('toast--show'); }, TOAST_TIMEOUT);
 };
 
 const saveAs = (uri, filename) => {
@@ -74,15 +62,31 @@ const saveAs = (uri, filename) => {
     link.href = uri;
     link.download = filename;
 
-    //Firefox requires the link to be in the body
+    // Firefox requires the link to be in the body
     document.body.appendChild(link);
 
-    //Simulate click
+    // Simulate click
     link.click();
 
-    //Remove the link when done
+    // Remove the link when done
     document.body.removeChild(link);
   } else {
     window.open(uri);
   }
+};
+
+const downloadQuote = () => {
+  let currentTime = new Date();
+
+  // Ignoring Confetti Canvas during download
+  $("#confetti-canvas").attr("data-html2canvas-ignore", "true");
+
+  html2canvas(document.body, HTML2CANVAS_CONFIG).then(function (canvas) {
+
+    // Downloading the file
+    saveAs(canvas.toDataURL(), `UXquotes-${currentTime.toLocaleString()}.png`);
+
+    // Pop some confetti to celebrate the download
+    confetti.start(1200, 100, 250);
+  });
 };
