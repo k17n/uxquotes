@@ -51,8 +51,10 @@ const copyQuote = () => {
   window.getSelection().removeAllRanges();
 
   // Show toast message once copied
-  TOAST_MESSAGE.classList.add('toast--show');
-  setTimeout(function () { TOAST_MESSAGE.classList.remove('toast--show'); }, TOAST_TIMEOUT);
+  TOAST_MESSAGE.classList.add("toast--show");
+  setTimeout(function () {
+    TOAST_MESSAGE.classList.remove("toast--show");
+  }, TOAST_TIMEOUT);
 };
 
 const saveAs = (uri, filename) => {
@@ -78,15 +80,45 @@ const saveAs = (uri, filename) => {
 const downloadQuote = () => {
   let currentTime = new Date();
 
-  // Ignoring Confetti Canvas during download
-  $("#confetti-canvas").attr("data-html2canvas-ignore", "true");
-
   html2canvas(document.body, HTML2CANVAS_CONFIG).then(function (canvas) {
-
     // Downloading the file
     saveAs(canvas.toDataURL(), `UXquotes-${currentTime.toLocaleString()}.png`);
 
     // Pop some confetti to celebrate the download
-    confetti.start(1200, 100, 250);
+    popConfetti(2500);
   });
+};
+
+const popConfetti = (durationInms) => {
+  const duration = durationInms || 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+  const randomInRange = (min, max) => {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    const particleCount = 100 * (timeLeft / duration);
+
+    // since particles fall down, start a bit higher than random
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      })
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      })
+    );
+  }, 250);
 };

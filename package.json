@@ -4,7 +4,10 @@
   "description": "Your daily dosage of UX motivation",
   "main": "index.js",
   "scripts": {
+    "start": "npm run dev",
     "build": "npm run compile-scss -- --style compressed",
+    "dev":"npm run start-server && npm run watch-scss",
+    "start-server": "serve --listen 3000",
     "compile-scss": "sass assets/scss/style.scss:assets/css/style.css",
     "watch-scss": "npm run compile-scss -- --watch"
   },
@@ -29,5 +32,8 @@
   "homepage": "https://github.com/kv96/uxquotes#readme",
   "dependencies": {
     "sass": "^1.32.8"
+  },
+  "devDependencies": {
+    "serve": "^11.3.2"
   }
 }
