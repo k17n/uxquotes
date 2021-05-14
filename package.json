@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "build": "npm run compile-scss -- --style compressed",
-    "dev":"npm run start-server && npm run watch-scss",
+    "build": "npm run scss:compile -- --style compressed",
+    "dev": "concurrently \"npm:scss:watch\" \"npm:start-server\" ",
     "start-server": "serve --listen 3000",
-    "compile-scss": "sass assets/scss/style.scss:assets/css/style.css",
-    "watch-scss": "npm run compile-scss -- --watch"
+    "scss:compile": "sass assets/scss/style.scss:assets/css/style.css",
+    "scss:watch": "npm run scss:compile -- --watch"
   },
   "repository": {
     "type": "git",
@@ -30,10 +30,9 @@
     "url": "https://github.com/kv96/uxquotes/issues"
   },
   "homepage": "https://github.com/kv96/uxquotes#readme",
-  "dependencies": {
-    "sass": "^1.32.8"
-  },
   "devDependencies": {
+    "concurrently": "^6.1.0",
+    "sass": "^1.32.13",
     "serve": "^11.3.2"
   }
 }
